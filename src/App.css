@@ -1,0 +1,32 @@
+
+
+.App {
+  text-align: center;
+  align-content: center;
+
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: inline-block;  
+}
+
+/* On screens that are 992px or less*/
+@media screen and (max-width: 992px) {
+.container {
+  width: 90%;
+  display: inline-block; 
+  }
+}
+
+/* On screens that are 600px or less*/
+@media screen and (max-width: 600px) {
+.container {  
+  width: 95%;
+  display: inline-block; 
+  }
+}
+
+
+
