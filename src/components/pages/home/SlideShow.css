@@ -1,143 +1,154 @@
 .slide-show {
-	height:auto;
-	width: 50%;	
-	position:relative;
-	margin-left: 25%;
+  height: auto;
+  width: 50%;
+  position: relative;
+  margin-left: 25%;
 }
 
-.image-slide{
-	
-	transition: left 2s ease-in-out;
+.image-slide {
+  transition: left 2s ease-in-out;
 }
 
-.slideimg{
-		
-	transition: left 2s ease-in-out; /* our nice transition */
-	/* transform: translate3d(-100%, 0px, 0px); 
-	transition-duration: 350ms; */
-	
+.slide-img {
+  transition: left 2s ease-in-out; /* our nice transition */
+  max-width: 100%;
+  max-height: auto;
+
+  /* transform: translate3d(-100%, 0px, 0px);
+	  transition-duration: 350ms; */
 }
 
 .imageLeftSide {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 50%;	
-	width: 25%;
-	height:100%;
-	/* cursor: pointer; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50%;
+  width: 25%;
+  height: 100%;
+  /* cursor: pointer; */
+}
+.imageLeftSide:hover {
+  background: white;
+  opacity: 0.2;
+}
 
+.imageRightSide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 75%;
+  width: 25%;
+  height: 100%;
+  /* background: white; */
+  /* cursor: pointer; */
+}
+.imageRightSide:hover {
+  background: white;
+  opacity: 0.2;
+}
 
-  }
-  .imageLeftSide:hover{	
-	background: white;	
-	opacity: 0.2;
-  }
-
-  .imageRightSide {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 75%;	
-	width: 25%;
-	height:100%;
-	/* background: white; */
-	/* cursor: pointer; */
-
-
-  }
-  .imageRightSide:hover{	
-	background: white;	
-	opacity: 0.2;
-  }
-
-
-.slide-arrow {	
-	color: blue;
-	cursor: pointer;
-	font-size: 2rem;	
-	position:absolute;
-	top:47%;
-	
+.slide-arrow {
+  color: blue;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  top: 47%;
 }
 
 .slide-arrow.right {
-	right: 3%;
-	z-index: 2;	
+  right: 3%;
+  z-index: 2;
 }
 
-.slide-arrow.left {	
-	left: 3%;
-	z-index: 2;
+.slide-arrow.left {
+  left: 3%;
+  z-index: 2;
+}
+
+.slide-tooltip {
+  color: white;
+  /* cursor: pointer; */
+  font-size: 1rem;
+  position: absolute;
+  top: 42%;
+  background-color: red;
+  padding: 3px;
+}
+
+.slide-tooltip.right {
+  right: 1%;
+  z-index: 1;
+}
+
+.slide-tooltip.left {
+  left: 1%;
+  z-index: 1;
 }
 
 /* On screens that are 992px or less*/
 @media screen and (max-width: 992px) {
-	.slide-show {		
-		width: 100%;			
-		margin-left: 0px;
-	}
-
+  .slide-show {
+    width: 100%;
+    margin-left: 0px;
+  }
 }
 
 /* On screens that are 600px or less*/
 @media screen and (max-width: 600px) {
-	.slide-show {		
-		width: 100%;			
-		margin-left: 0px;
-	}
-
+  .slide-show {
+    width: 100%;
+    margin-left: 0px;
+  }
 }
 
-
 .slide-in {
-	z-index: 10; /* to position it in front of the other content */
-	position: absolute;
-	overflow: hidden; /* to prevent scrollbar appearing */
-  }
-  
-  .slide-in.from-left {
-	left: 0;
-  }
-  
-  .slide-in.from-right {
-	right: 0;
-  }
-  
-  .slide-in-content {
-	padding: 5px 20px;
-	background: #eee;
-	transition: all .5s ease; /* our nice transition */
-  }
-  
-  .slide-in.from-left .slide-in-content {
-	transform: translateX(-100%);
-	-webkit-transform: translateX(-100%);
-  }
-  
-  .slide-in.from-right .slide-in-content {
-	transform: translateX(100%);
-	-webkit-transform: translateX(100%);
-  }
-  
-  .slide-in.show .slide-in-content {
-	transform: translateX(0);
-	-webkit-transform: translateX(0);
-  }
+  z-index: 10; /* to position it in front of the other content */
+  position: absolute;
+  overflow: hidden; /* to prevent scrollbar appearing */
+}
 
-  .legend {
-	transition: all .5s ease-in-out;
-    position: absolute;
-    /* bottom: 40px; */
-    left: 50%;
-    margin-left: -50%;
-    width: 100%;
-    /* border-radius: 10px; */
-    background: #000;
-    color: #fff;
-    padding: 10px 0;
-    font-size: 12px;
-    text-align: center;
-    opacity: .5;
-    transition: opacity .35s ease-in-out
-  }
+.slide-in.from-left {
+  left: 0;
+}
+
+.slide-in.from-right {
+  right: 0;
+}
+
+.slide-in-content {
+  padding: 5px 20px;
+  background: #eee;
+  transition: all 0.5s ease; /* our nice transition */
+}
+
+.slide-in.from-left .slide-in-content {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+.slide-in.from-right .slide-in-content {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+}
+
+.slide-in.show .slide-in-content {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}
+
+.legend {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  /* bottom: 40px; */
+  left: 50%;
+  margin-left: -50%;
+  width: 100%;
+  /* border-radius: 10px; */
+  background: #000;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.35s ease-in-out;
+}

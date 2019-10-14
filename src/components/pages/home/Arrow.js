@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-const Arrow = ( props ) => {
-	
-	return (
-	<div 
-		className={ `slide-arrow ${props.direction}` } 
-		onClick={ props.clickFunction }>
-		{ props.glyph } 
-		
-	</div>
-	)
-};
+class Arrow extends Component {
+  state = {
+    isHovering: false
+  }
 
+  handleMouseHover() {
+    this.setState(this.toggleHoverState)
+  }
 
-export default Arrow;
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering
+    }
+  }
+
+  render() {
+    const tooltipStyle = {
+      display: this.state.isHovering ? 'block' : 'none'
+    }
+
+    return (
+      <div>
+        <div
+          className={`slide-arrow ${this.props.direction}`}
+          onClick={this.props.clickFunction}
+          onMouseEnter={this.handleMouseHover.bind(this)}
+          onMouseLeave={this.handleMouseHover.bind(this)}
+        >
+          {this.props.glyph}
+        </div>
+
+        <div>
+          <div style={tooltipStyle} className={`slide-tooltip ${this.props.direction}`}>
+            {this.props.title}
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Arrow
