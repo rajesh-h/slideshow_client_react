@@ -27,12 +27,17 @@ class Arrow extends Component {
           onClick={this.props.clickFunction}
           onMouseEnter={this.handleMouseHover.bind(this)}
           onMouseLeave={this.handleMouseHover.bind(this)}
+          data-testid={`arrow-${this.props.direction}`}
         >
           {this.props.glyph}
         </div>
 
         <div>
-          <div style={tooltipStyle} className={`slide-tooltip ${this.props.direction}`}>
+          <div
+            style={tooltipStyle}
+            className={`slide-tooltip ${this.props.direction}`}
+            data-testid={`slide-tooltip-${this.props.direction}`}
+          >
             {this.props.title}
           </div>
         </div>

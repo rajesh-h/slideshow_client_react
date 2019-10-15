@@ -18,8 +18,8 @@ const Slide = (props) => {
       <div className="imageLeftSide" onClick={props.goToPrevSlide}></div>
       <div className="imageRightSide" onClick={props.goToNextSlide}></div>
       <div>
-        <p className="legend">
-          {props.slide.title} {' : '} {props.slide.description}{' '}
+        <p className="legend" data-testid="slide-title-desc">
+          {props.slide.title} {':'} {props.slide.description}
         </p>
       </div>
     </div>
