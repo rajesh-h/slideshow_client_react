@@ -12,7 +12,7 @@ import './App.css'
 import os from 'os'
 const hostname = os.hostname()
 const base_url =
-  hostname === 'localhost' ? 'http://localhost:8000/' : 'https://shdp1.sse.codesandbox.io/'
+  hostname === 'localhost' ? 'http://localhost:8000/' : 'https://dl98x.sse.codesandbox.io/'
 class App extends React.Component {
   state = {
     activeSlides: [],

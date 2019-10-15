@@ -4,11 +4,7 @@ import App from './App'
 import SlideShow from './components/pages/home/SlideShow'
 import { render, fireEvent } from '@testing-library/react'
 
-import os from 'os'
-const hostname = os.hostname()
-const base_url =
-  hostname === 'localhost' ? 'http://localhost:8000/' : 'https://shdp1.sse.codesandbox.io/'
-
+const base_url = 'https://loacalhost:3000'
 const slides = [
   {
     title: 'Tiger',
