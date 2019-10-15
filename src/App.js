@@ -9,8 +9,10 @@ import SlideShow from './components/pages/home/SlideShow'
 import RRCarousel from './components/pages/slider2/Carousel'
 import axios from 'axios'
 import './App.css'
-
-const base_url = 'http://localhost:8000/'
+import os from 'os'
+const hostname = os.hostname()
+const base_url =
+  hostname === 'localhost' ? 'http://localhost:8000/' : 'https://shdp1.sse.codesandbox.io/'
 class App extends React.Component {
   state = {
     activeSlides: [],
@@ -23,8 +25,9 @@ class App extends React.Component {
         {
           activeSlides: res.data.data,
           imagesLoaded: true
-        }
+        },
         // console.log(res.data.data)
+        console.log(process.env.PUBLIC_URL === 'undefined')
       )
     )
   }
